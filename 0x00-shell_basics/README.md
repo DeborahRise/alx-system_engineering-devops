@@ -1,1 +1,1 @@
-The root directory in the Repo
+0x00. Shell Basics

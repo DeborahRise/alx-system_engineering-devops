@@ -1,1 +1,1 @@
-Writing Scripts in Shell and using Shebang
+Shell Basics, Permissions, Scripts writting using SHEBANG and creating executable files!
