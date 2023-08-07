@@ -1,2 +1,2 @@
 #!/bin/bash
-grep "username:home_directory"
+cut -d ':' -f * username:home_directory /etc/passwd
