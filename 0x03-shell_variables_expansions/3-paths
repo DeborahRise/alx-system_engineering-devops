@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $PATH | grep "*.dir" | wc -l
+echo "$PATH | grep ':' | wc -l"
