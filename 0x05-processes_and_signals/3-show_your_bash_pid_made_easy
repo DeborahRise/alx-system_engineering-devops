@@ -2,4 +2,4 @@
 # a Bash script that displays the pid, and a list of processes
 # with names that contains bash
 
-pgrep bash -1
+pgrep -1 bash
