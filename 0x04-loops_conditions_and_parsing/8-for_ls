@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# a script that displays info about each file in the CD
+
+myfile=$(ls)
+
+for f in $myfile; do
+	echo "$f" | cut -d '-' -f2
+done
