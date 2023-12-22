@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 # a Bash script that displays the pid, and a list of processes
-
 pgrep -1 bash
