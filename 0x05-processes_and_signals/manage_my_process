@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# a script that displays infinitely
+# print 'I am alive' to tmp/my_process
 
 while true
 do
