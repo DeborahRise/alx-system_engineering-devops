@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# displays all active IPv4 IPs on the local host
+
+ifconfig | grep -e "inet addr" | cut -d ":" -f2 | cut -d ' ' -f1
