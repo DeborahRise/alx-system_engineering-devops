@@ -25,3 +25,12 @@
 	- What is a port
 	- Memorize SSH, HTTP and HTTPS port numbers
 ##### What tool/protocol is often used to check if a device is connected to a network
+
+# TASKS FOR THIS PROJECT
+
+	- OSI Model
+	- Types of network
+	- MAC and IP address
+	- TCP and UDP
+	- A bash script that displays listening ports
+	- A bash script that pings an  IP address passed as arg
