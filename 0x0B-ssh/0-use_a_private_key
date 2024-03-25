@@ -3,4 +3,4 @@
 # to connect to your server using the private key
 # ~/.ssh/school with the user ubuntu.
 
-ssh -i ~/.ssh/school ubuntu@100.27.11.128
+ssh -i ~/.ssh/school ubuntu@54.82.172.244
