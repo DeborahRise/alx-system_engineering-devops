@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# to connect to your server using the private key
+# ~/.ssh/school with the user ubuntu.
+
+ssh-keygen -t rsa -b 4096 -f "school" -N "betty"
