@@ -9,9 +9,12 @@ content => '~/.ssh/school'
 
 file { ~/.ssh/config:
 ensure => 'present',
-Host => Alx,
-HostName => 54.82.172.244,
-User => 'ubuntu',
-PasswordAuthentication enable => False,
-require => File[~/.ssh/school]
+mode => '0744'
+content => "
+Host Alx,
+HostName 54.82.172.244,
+User 'ubuntu',
+IdentityFile ~/.ssh/school
+PasswordAuthentication no
+",
 }
