@@ -8,6 +8,7 @@ content => '~/.ssh/school'
 
 
 file { ~/.ssh/config:
+path => /etc/ssh/ssh_config,
 ensure => 'present',
 mode => '0744'
 content => "
