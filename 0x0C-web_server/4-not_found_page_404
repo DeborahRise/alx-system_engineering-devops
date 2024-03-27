@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# A script that Installs nginx server
+#A script that Installs nginx server
 
 sudo apt-get update
 sudo apt-get install -y nginx
@@ -10,8 +10,8 @@ new_string="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/
 sudo sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-enabled/default
 
 #redirects default error to custom error
-new_error="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
-sudo sed -i "s/listen 80 default_server;/$new_error/" /etc/nginx/sites-enabled/default
+new_string="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
+sudo sed -i "s/listen 80 default_server;/$new_string/" /etc/nginx/sites-enabled/default
 
 # restart the server
 sudo service nginx restart
