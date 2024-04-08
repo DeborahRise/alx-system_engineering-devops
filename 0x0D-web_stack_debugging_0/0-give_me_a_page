@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # to get Apache to run on the container
 
-/etc/init.d/apache2 start
+sudo service apache2 start
 echo 'Hello Holberton' > /var/www/html/index.html
