@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# a short and sweet script to fix nginx listening problem
+sudo ln -sf /etc/nginx/sites-available/index.html /etc/nginx/sites-enabled
+sudo service nginx restart
+pkill -o nginx
