@@ -1,4 +1,4 @@
-#!/usr/bin/bash env
+#!/usr/bin/env bash
 #  Bash script with the minimum number of commands to
 # find out what’s keeping your Ubuntu container’s Nginx installation from listening on port 80
 
