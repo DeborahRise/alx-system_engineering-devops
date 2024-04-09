@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Bash script that will display information about subdomains.
+
+query_dns() {
+    local domain=$1
+    local subdomain=$2
+    dig +short $subdomain.$domain A | awk '{print $1}'
+}
+
+if [ $# -eq 1 ]; then
+    for subdomain in www, lb-01 web-01 web-02; do
+        ip=$(query_dns $1 $subdomain)
+        echo "The subdomain $subdomain is a A record and points to $ip"
+    done
+elif [ $# -eq 2 ]; then
+    ip=$(query_dns $1 $2)
+    echo "The subdomain $2 is an A record and points to $ip"
+fi
