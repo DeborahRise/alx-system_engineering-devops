@@ -8,7 +8,7 @@ query_dns() {
 }
 
 if [ $# -eq 1 ]; then
-    for subdomain in www, lb-01 web-01 web-02; do
+    for subdomain in www lb-01 web-01 web-02; do
         ip=$(query_dns $1 $subdomain)
         echo "The subdomain $subdomain is a A record and points to $ip"
     done
