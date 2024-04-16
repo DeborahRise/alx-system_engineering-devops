@@ -14,5 +14,5 @@ if [ $# -eq 1 ]; then
     done
 elif [ $# -eq 2 ]; then
     ip=$(query_dns $1 $2)
-    echo "The subdomain $2 is an A record and points to $ip"
+    echo "The subdomain $2 is a A record and points to $ip"
 fi
