@@ -9,6 +9,6 @@ current_time=$(date +"%d-%m-%Y")
 databases=$(mysql -u "root" -p"$pssword" -e "show databases;"| grep -Ev "(Database|information_schema|performance_schema|mysql)")
 
 for db in $databases; do
-mysqldump -u "root" -p"$pssword $db" "$db" > "backup.sql"
+mysqldump -u "root" -p"$pssword $db" "$db" > backup.sql
 
-tar -czvf "backup${current_time}.tar.gz" "backup.sql"
+tar -czvf "backup${current_time}.tar.gz" backup.sql
