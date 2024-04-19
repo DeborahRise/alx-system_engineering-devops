@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# a Bash script that generates a MySQL dump and
+# creates a compressed archive out of it.
+
+local pssword = $1;
+
+current_time=$(date +"%d-%m-%Y")
+
+databases =$(mysql -u "root" -p $pssword -e "show databases;"
+| grep -Ev "(Database|information_schema|performance_schema|mysql)")
+
+for db in $databases; do
+mysqldump -u "root" -p $pssword $db > "backup.sql"
+
+tar -czvf "backup($current_time).tar.gz" < "backup.sql"
