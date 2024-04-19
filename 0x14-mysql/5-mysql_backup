@@ -2,13 +2,14 @@
 # a Bash script that generates a MySQL dump and
 # creates a compressed archive out of it.
 
-pssword="your_pwd"
+pssword=$1
 
 current_time=$(date +"%d-%m-%Y")
+dump_filename="backup.sql"
 
 databases=$(mysql -u "root" -p"$pssword" -e "show databases;"| grep -Ev "(Database|information_schema|performance_schema|mysql)")
 
 for db in $databases; do
-mysqldump -u "root" -p"$pssword $db" "$db" > backup.sql
+mysqldump -u "root" -p"$pssword $db" "$db" > "$dump_filename"
 
-tar -czvf "backup${current_time}.tar.gz" backup.sql
+tar -czvf "${current_time}.tar.gz" "$dump_filename"
