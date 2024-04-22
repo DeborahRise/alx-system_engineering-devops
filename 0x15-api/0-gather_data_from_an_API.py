@@ -7,28 +7,25 @@ import sys
 import json
 
 if __name__ == "__main__":
-    # Check if an employee ID is provided as a command-line argument
-    if len(sys.argv) != 2:
-        print("Usage: python script.py <employee_id>")
-        sys.exit(1)
-
     user_id = sys.argv[1]
-    url = 'https://jsonplaceholder.typicode.com/todos?userId={}'.format(
-        user_id)
+    url = 'https://jsonplaceholder.typicode.com/'
 
     # Make a GET request to the API
-    response = requests.get(url)
+    response = requests.get(url + "users/{}".format(user_id))
 
     # Check if the request was successful
     if response.status_code == 200:
-        tasks = response.json()
+        user = response.json()
+        params = {"userId": user_id}
+        todos_response = requests.get(url + "todos", params=params)
+        tasks = todos_response.json()
         total_tasks = len(tasks)
 
         # Count completed tasks
         completed_tasks = sum(1 for task in tasks if task['completed'])
 
         print("Employee {} is done with tasks ({}/{})"
-              .format(user_id, completed_tasks, total_tasks))
+              .format(user['name'], completed_tasks, total_tasks))
 
         # Print titles of completed tasks
         for task in tasks:
