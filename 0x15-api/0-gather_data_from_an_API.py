@@ -23,8 +23,8 @@ if __name__ == "__main__":
         # Count completed tasks
         completed_tasks = sum(1 for task in tasks if task['completed'])
 
-        print("Employee {} is done with tasks ({}/{})"
-              .format(user['name'], completed_tasks, total_tasks))
+        print("Employee {} is done with tasks({}/{}):"
+              .format(user.get('name'), completed_tasks, total_tasks))
 
         # Print titles of completed tasks
         for task in tasks:
