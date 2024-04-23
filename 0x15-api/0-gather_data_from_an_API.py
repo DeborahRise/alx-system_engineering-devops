@@ -29,4 +29,4 @@ if __name__ == "__main__":
         # Print titles of completed tasks
         for task in tasks:
             if task['completed']:
-                print("\t{}".format(task['title']))
+                print("\t {}".format(task['title']))
