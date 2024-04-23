@@ -19,12 +19,14 @@ if __name__ == "__main__":
         params = {"userId": user_id}
         username = user['username']
         todos_response = requests.get(url + "todos", params=params)
-        tasks = todos_response.json() 
-        
+        tasks = todos_response.json()
+
         task_dict = {user_id: []}
         for task in tasks:
-            task_info = {"task": task["title"], "completed": task["completed"],
-                "username": username}
+            task_info = {
+                "task": task["title"], "completed": task["completed"],
+                "username": username
+                }
             task_dict[user_id].append(task_info)
 
         json_filename = "{}.json".format(user_id)
