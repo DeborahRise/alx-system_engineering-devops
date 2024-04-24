@@ -27,12 +27,10 @@ if __name__ == "__main__":
         """ print("Employee {} is done with tasks ({}/{})"
               .format(user['username'], completed_tasks, total_tasks))"""
 
-        
         csv_file = "{}.csv".format(user_id)
 
         with open(csv_file, "w", newline="") as csvfile:
             csv_writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-           
             for task in tasks:
                 csv_writer.writerow([user_id, user['username'],
                                      task['completed'], task['title']])
