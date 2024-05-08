@@ -1,9 +1,15 @@
 #!/usr/bin/python3
+"""
+recurse request
+"""
 
 import requests as r
 
 
 def recurse(subreddit, hot_list=[], after=""):
+    """
+    recurse request
+    """
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) \
@@ -22,5 +28,5 @@ def recurse(subreddit, hot_list=[], after=""):
         hot_list += [post.get("data").get("title") for post in posts]
         after = response.json().get("data").get("after")
         if after is not None:
-                recurse(subreddit, hot_list, after)
+            recurse(subreddit, hot_list, after)
         return hot_list
