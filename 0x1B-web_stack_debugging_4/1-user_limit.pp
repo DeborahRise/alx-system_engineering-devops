@@ -1,9 +1,10 @@
-# Task 0 to fix limit at nginx
+# Task 1 to fix limit for user
 
-exec { 'fix--for-nginx':
-  command => 'sed -i "s/15/4096/" /etc/default/nginx',
-   path    => '/usr/local/bin/:/bin/'
+exec { 'fix_limit_hbton_user':
+  command => 'sed -i "/holberton hard/s/5/50000/" /etc/security/limits.conf',
+  path    => '/usr/local/bin/:/bin/'
 }
+
 
 # always restart nginx
 -> exec { 'nginx-restart':
