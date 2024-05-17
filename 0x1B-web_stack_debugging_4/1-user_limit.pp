@@ -5,6 +5,7 @@ exec { 'fix--for-nginx':
    path    => '/usr/local/bin/:/bin/'
 }
 
+# always restart nginx
 -> exec { 'nginx-restart':
     command => 'nginx restart',
     path    => '/etc/init.d/'
